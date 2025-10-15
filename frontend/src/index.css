@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body, #root { height: 100%; }
+body {
+  color: #ffffff;
+  background: radial-gradient(60% 80% at 10% 0%, rgba(99,91,255,0.25) 0%, rgba(11,16,32,1) 50%),
+              radial-gradient(80% 80% at 90% 10%, rgba(0,212,255,0.15) 0%, rgba(11,16,32,1) 60%),
+              #0b1020;
+}
+.container { max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+
+@layer components {
+  .card {
+    background-color: rgba(18, 25, 56, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 1rem; /* rounded-xl */
+    box-shadow: 0 10px 30px rgba(99,91,255,0.25);
+  }
+  .btn-primary {
+    background-color: #635bff;
+    color: #fff;
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    transition: all 150ms ease;
+    box-shadow: 0 10px 30px rgba(99,91,255,0.25);
+  }
+  .btn-primary:hover { background-color: #5146ff; }
+  .btn-primary:active { background-color: #3c2eff; }
+  .btn-ghost {
+    color: #fff;
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 0.5rem 1rem;
+    transition: all 150ms ease;
+    background-color: rgba(255,255,255,0.10);
+  }
+  .btn-ghost:hover { background-color: rgba(255,255,255,0.20); }
+  .chip {
+    display: inline-block;
+    font-size: 0.75rem; /* text-xs */
+    padding: 0.25rem 0.5rem; /* px-2 py-1 */
+    border-radius: 9999px; /* rounded-full */
+    border: 1px solid rgba(255,255,255,0.10);
+    background-color: rgba(255,255,255,0.10);
+  }
+}
+
+/* Accessible dark form controls */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="datetime-local"],
+select,
+textarea {
+  background-color: rgba(255,255,255,0.08);
+  color: #e5e7eb; /* gray-200 */
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+input::placeholder,
+textarea::placeholder { color: #9ca3af; /* gray-400 */ }
+input:focus,
+select:focus,
+textarea:focus { outline: none; border-color: #635bff; box-shadow: 0 0 0 3px rgba(99,91,255,0.25); }
+
+label { color: #e5e7eb; }
+a { color: #00d4ff; }
+a:hover { color: #7dd3fc; }
